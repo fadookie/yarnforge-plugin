@@ -160,7 +160,7 @@ public abstract class BaseRemappingTask extends DefaultTask {
     }
 
     public Pair<TinyTree, File> loadTree(Project project, String mappings) throws IOException {
-        try (FileSystem archive = FileSystems.newFileSystem(project.getConfigurations().detachedConfiguration(project.getDependencies().create(mappings)).getSingleFile().toPath(), null)) {
+        try (FileSystem archive = FileSystems.newFileSystem(project.getConfigurations().detachedConfiguration(project.getDependencies().create(mappings)).getSingleFile().toPath(), (ClassLoader)null)) {
             Path copy = Files.createTempFile("mappings", ".tiny");
             Path output = Files.createTempFile("mappings", ".tiny");
 
