@@ -1,0 +1,3 @@
+[submodule "geckolib"]
+	path = geckolib
+	url = git@github.com:bernie-g/geckolib.git
